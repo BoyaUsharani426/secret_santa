@@ -103,7 +103,6 @@ const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let session = JSON.parse(localStorage.getItem('ss') || 'null');
 let mode = 'join', revealing = false, shown = false;
-
 /* ---------- decoration ---------- */
 for (let i = 0; i < 45; i++) {
   const s = document.createElement('div');
