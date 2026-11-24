@@ -1,0 +1,47 @@
+:root { --red:#c0272d; --green:#14532d; --gold:#f5c542; --card:rgba(255,255,255,.12); }
+* { box-sizing:border-box; margin:0; }
+body {
+  min-height:100vh; font-family:'Poppins',sans-serif; color:#fff;
+  background: radial-gradient(circle at 20% 10%, #1f7a43 0%, #0e3b21 45%, #5a0f14 100%);
+  display:flex; align-items:center; justify-content:center; padding:20px; overflow-x:hidden;
+}
+h1,h2 { font-family:'Mountains of Christmas',cursive; color:var(--gold); text-shadow:0 2px 8px rgba(0,0,0,.4); }
+h1 { font-size:2.8rem; text-align:center; }
+h2 { font-size:1.8rem; margin-bottom:10px; }
+.wrap { width:100%; max-width:460px; position:relative; z-index:2; }
+.card { background:var(--card); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.25);
+        border-radius:22px; padding:26px; margin-top:18px; box-shadow:0 10px 40px rgba(0,0,0,.35); }
+.tabs { display:flex; gap:8px; margin-bottom:16px; }
+.tab { flex:1; padding:10px; border-radius:12px; border:0; cursor:pointer; font-weight:600;
+       background:rgba(255,255,255,.15); color:#fff; }
+.tab.active { background:var(--red); }
+input { width:100%; padding:13px 14px; border-radius:12px; border:2px solid transparent; outline:none;
+        font-size:1rem; margin-bottom:12px; font-family:inherit; }
+input:focus { border-color:var(--gold); }
+#code { text-transform:uppercase; letter-spacing:4px; text-align:center; font-weight:600; }
+.btn { width:100%; padding:14px; border:0; border-radius:14px; font-size:1.05rem; font-weight:600; cursor:pointer;
+       background:linear-gradient(135deg,#e53935,#b71c1c); color:#fff; box-shadow:0 4px 14px rgba(0,0,0,.35); transition:.2s; }
+.btn:hover { transform:translateY(-2px); }
+.btn:disabled { opacity:.45; cursor:not-allowed; transform:none; }
+.hidden { display:none !important; }
+.roomcode { font-size:2.4rem; letter-spacing:8px; text-align:center; font-weight:600; color:var(--gold);
+            background:rgba(0,0,0,.25); border-radius:14px; padding:10px; cursor:pointer; }
+.hint { text-align:center; font-size:.8rem; opacity:.8; margin:6px 0 14px; }
+.group-title { margin:14px 0 6px; font-weight:600; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; }
+.chip { background:rgba(255,255,255,.18); padding:6px 12px; border-radius:20px; font-size:.9rem; }
+.err { background:#ffebee; color:#b71c1c; padding:10px 12px; border-radius:10px; margin-bottom:12px; font-size:.9rem; }
+.stage { text-align:center; padding:10px 0; min-height:210px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+.gift { font-size:6rem; animation:shake 0.6s infinite; }
+.gift.open { animation:pop .6s forwards; }
+@keyframes shake { 0%,100%{transform:rotate(0)} 25%{transform:rotate(-12deg) scale(1.05)} 75%{transform:rotate(12deg) scale(1.05)} }
+@keyframes pop { to { transform:scale(0); opacity:0; } }
+.slot { font-family:'Mountains of Christmas',cursive; font-size:2.6rem; color:var(--gold); min-height:3.4rem;
+        background:rgba(0,0,0,.3); border-radius:16px; padding:8px 22px; margin-top:8px; border:2px dashed var(--gold); }
+.slot.final { animation:glow 1s infinite alternate; color:#fff; border-style:solid; }
+@keyframes glow { from{box-shadow:0 0 10px var(--gold)} to{box-shadow:0 0 34px var(--gold)} }
+table { width:100%; border-collapse:collapse; margin-top:8px; font-size:.92rem; }
+td,th { padding:8px 6px; text-align:left; border-bottom:1px solid rgba(255,255,255,.15); }
+.snow, .confetti { position:fixed; top:-30px; pointer-events:none; z-index:1; animation:fall linear forwards; }
+@keyframes fall { to { transform:translateY(110vh) rotate(360deg); } }
+.small { background:none; border:0; color:#fff; opacity:.7; text-decoration:underline; cursor:pointer; margin-top:14px; width:100%; }
